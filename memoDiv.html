@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>memoDiv</title>
+    <style>
+    #container{
+        display:inline-block;
+        border:lightslategrey solid 1px;
+        position:relative;
+        top:200px;
+        left:400px;
+        box-shadow: 2px 1px 2px 1px lightslategrey;
+    }
+        table,td,th{
+            border:1px solid lightslategrey;
+            border-collapse: collapse;
+        }
+        #onFly{
+            display:inline-block;
+            visibility:hidden;
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <table>
+        <thead>
+        <tr>
+            <th>rollNo.</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>101</td>
+            <td>Vishal</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Ashish</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<input type="range" id="mySearch" >
+
+
+<a href="#container">home</a>
+
+
+<div id="onFly">
+<input id='inputValue' type="text">
+    <button onclick="sbmtBtn()">submit</button>
+</div>
+
+<script>
+var tdTag = document.getElementsByTagName('td');
+    for(var i=0;i<tdTag.length;i++){
+        tdTag[i].addEventListener('click',addClick);
+    }
+
+    function addClick() {
+        document.getElementById('onFly').style.visibility='visible';
+        if(valuesObj.length&&valuesObj.key==){
+            document.getElementById('inputValue').innerHTML=
+        }
+        console.log(this.innerHTML);
+        newObj = new newObject();
+        newObj.key=this.innerHTML;
+    }
+    var valuesObj = new Array();
+    function sbmtBtn(){
+    var x = document.getElementById('inputValue').value;
+        newObj.description=x;
+        console.log(x);
+        console.log(newObj);
+        valuesObj.push(newObj);
+        console.log(valuesObj);
+}
+
+
+function newObject(key, description){
+        this.key=key;
+        this.description = description;
+    }
+</script>
+</body>
+</html>

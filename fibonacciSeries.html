@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #onFly{
+            position:relative;
+            top:200px;
+            display:inline-block;
+            border:1px #C93095 solid;
+            box-shadow: 2px 3px 1px 1px #C93095;
+            padding:10px;
+        }
+        #container{
+
+            position:relative;
+            left:400px;
+            top:50px;
+            display:inline-block;
+            border:1px #C93095 solid;
+            box-shadow: 2px 3px 1px 1px #C93095;
+            padding:10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+<lable>enter the length of sequence starting 0</lable>
+<input type="text" id="inputNumber">
+<button onclick="submitBtn()">submit</button>
+</div>
+<script>
+
+
+    function fibonacci (n){
+        var x=0,sum=0,y=0;
+
+        for(var i=0;i<=n;i++){
+            //console.log("in loop "+n);
+            if(n==0){
+                newDiv(sum);
+                return;
+            }
+            else {
+                if (i == 1) {
+                    sum = sum + 1;
+
+                }
+                else {
+                    y=sum;
+                    sum=sum+x;
+            //        console.log(sum);
+                    }
+                  }
+                x=y;
+            
+            newDiv(sum);
+        }
+    }
+    function submitBtn(){
+        var lengthOfSeries = document.getElementById('inputNumber').value;
+
+
+
+    fibonacci(lengthOfSeries);}
+
+    function newDiv(sum){
+        var newElement = document.createElement("div");
+        var newText = document.createTextNode(sum);
+        newElement.setAttribute("id","onFly");
+        document.body.appendChild(newElement).appendChild(newText);
+
+    }
+</script>
+</body>
+</html>

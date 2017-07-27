@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid #AEAEAE;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        #container {
+        / / margin: auto;
+            border: 1px solid #AEAEAE;
+            display: inline-block;
+            box-shadow: 4px 1px 20px 1px grey;
+            position: relative;
+            top: 250px;
+            left: 500px;
+
+        }
+
+        #cntnr {
+            border: 1px solid #AEAEAE;
+            display: inline-block;
+            box-shadow: 4px 1px 20px 1px grey;
+            position: relative;
+            top: 250px;
+            left: 500px;
+            visibility: hidden;
+        }
+
+        table td:hover {
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="container">
+    <table>
+        <thead>
+        <tr>
+            <th>Clicked</th>
+            <th>Clicked</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Clicked</td>
+            <td>Clicked</td>
+        </tr>
+        <tr>
+            <td>Clicked</td>
+            <td>Clicked</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<script>
+    count = 0;
+    console.log(document.getElementById("container").childNodes[1].childNodes[1].childNodes[1].childNodes[1].innerHTML);
+    var x = document.getElementById("container").childNodes[1].childNodes[1].childNodes[1].childNodes[1];
+    var tblData = document.getElementsByTagName("td");
+
+    tblData[0].addEventListener("click", tdClicked);
+    tblData[1].addEventListener("click", tdClicked);
+    tblData[2].addEventListener("click", tdClicked);
+    tblData[3].addEventListener("click", tdClicked);
+
+
+    function tdClicked() {
+
+        allTurnOver();
+        this.innerHTML = "YES";
+
+    }
+    function allTurnOver() {
+        for (var i = 0; i < tblData.length; i++) {
+            tblData[i].innerHTML = "No";
+        }
+    }
+
+</script>
+</body>
+</html>
